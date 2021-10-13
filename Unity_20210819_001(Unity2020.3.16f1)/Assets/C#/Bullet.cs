@@ -8,6 +8,10 @@ public class Bullet : MonoBehaviour
     public float DeleteTime;
     [Header("移動速度")]
     public float Speed;
+    [Header("玩家爆炸的特效")]
+    public GameObject PlayerVFX;
+    [Header("敵軍爆炸的特效")]
+    public GameObject EnemyVFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         //子彈移動
-        transform.Translate(Vector3.up * Speed);
+        transform.Translate(Vector3.up * Speed * Time.deltaTime);
 
     }
     /*3D 碰撞偵測-穿透型碰撞，自帶Collider變數
@@ -37,6 +41,9 @@ public class Bullet : MonoBehaviour
         //如果玩家的子彈，並且碰撞對象為敵機
         if(gameObject.tag == "PlayerBullet" && hit.GetComponent<Collider2D>().tag == "Enemy")
         {
+            Instantiate(EnemyVFX, hit.transform.position, transform.rotation);
+            //玩家子彈打到敵機後，找到場景命名為GM的物件，找到GM腳本並呼叫Total_Scorce
+            GameObject.Find("GM").GetComponent<GM>().Total_Score();
             Debug.Log("攻擊到敵機");
             //玩家的子彈要消失
             Destroy(gameObject);
@@ -46,6 +53,9 @@ public class Bullet : MonoBehaviour
         //如果敵機的子彈，並且碰撞對象為玩家
         if (gameObject.tag == "EnemyBullet" && hit.GetComponent<Collider2D>().tag == "Player")
         {
+            Instantiate(PlayerVFX, hit.transform.position, transform.rotation);
+            //敵機子彈打到玩家，找到場景中命名為GM的物件，找到GM腳本並呼叫HurtPlayer
+            GameObject.Find("GM").GetComponent<GM>().HurtPlayer();
             Debug.Log("攻擊到玩家");
             //敵機的子彈要消失
             Destroy(gameObject);

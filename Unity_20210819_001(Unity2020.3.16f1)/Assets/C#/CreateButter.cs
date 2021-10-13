@@ -21,6 +21,6 @@ public class CreateButter : MonoBehaviour
     void Update()
     {
         //¼Ä¾÷¦ì²¾
-        transform.Translate(Vector3.up * Speed);
+        transform.Translate(Vector3.up * Speed * Time.deltaTime);
     }
 }

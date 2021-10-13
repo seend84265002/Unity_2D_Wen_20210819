@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateBullet_ligth : MonoBehaviour
+public class CreateBuller_ligth : MonoBehaviour
 {
     [Header("多久時間後將敵機刪除")]
     public float DeleteTime;

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1898235542179768115}
   - component: {fileID: 8071489604501880230}
   - component: {fileID: 3374599539164499679}
-  - component: {fileID: 6237611935390006328}
   m_Layer: 0
   m_Name: monster02
   m_TagString: Enemy
@@ -152,13 +151,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898235542179768127}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cec0e3c31f97601459f71fa4f7fcd3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeleteTime: 20
-  Speed: -0.005
+  DeleteTime: 15
+  Speed: -2.5
 --- !u!114 &3374599539164499679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,20 +173,6 @@ MonoBehaviour:
   Timer: 0.5
   Bullet: {fileID: 1139936688681065191, guid: ff151958e283a0c479f40f611125fbbb, type: 3}
   BulletPos: {fileID: 4896093688708472676}
---- !u!114 &6237611935390006328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898235542179768127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0ab7cc6c55fb6408420b7cd83883bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeleteTime: 30
-  Speed: 0.005
 --- !u!1 &4896093688708472676
 GameObject:
   m_ObjectHideFlags: 0

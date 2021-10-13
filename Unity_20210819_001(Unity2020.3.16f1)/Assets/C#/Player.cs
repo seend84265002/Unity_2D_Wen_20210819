@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         
         //PC
         #if UNITY_STANDALONE_WIN   
-        transform.Translate(Input.GetAxis("Horizontal") * Speed, Input.GetAxis("Vertical") * Speed, 0);
+        transform.Translate(Input.GetAxis("Horizontal") * Speed * Time.deltaTime, Input.GetAxis("Vertical") * Speed * Time.deltaTime, 0);
         #endif
 
         //Mobile        
@@ -154,7 +154,7 @@ public class Player : MonoBehaviour
     {
         if(JoystickState && IsJoystick)
         {
-            transform.Translate(pos.x * Speed, pos.y * Speed,0);
+            transform.Translate(pos.x * Speed * Time.deltaTime, pos.y * Speed* Time.deltaTime,0);
         }
     }
 
